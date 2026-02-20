@@ -12,14 +12,14 @@ jobs:
       - name: Checkout code
         uses: actions/checkout@v4
 
-      - name: prime-cache-d10a2cd
+      - name: Cache dependencies
         id: cache-step
         uses: actions/cache@v4
         with:
           path: ~/.cache/demo
           key: cache-d10a2cd
 
-      - name: Show cache result
+      - name: prime-cache-d10a2cd
         run: echo "Cache hit: ${{ steps.cache-step.outputs.cache-hit }}"
 
       - name: Populate cache if missed
